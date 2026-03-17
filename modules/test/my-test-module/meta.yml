@@ -1,0 +1,42 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/nf-core/modules/master/modules/yaml-schema.json
+name: test/my-test-module
+version: 0.0.7  
+description: This is a test module
+license: Apache License v2  
+keywords:
+  - test
+input:
+  - - meta:
+        type: map
+        description: |
+          Groovy Map containing sample information
+          e.g. [ id:'test', single_end:false ]
+    - id:
+        type: string
+        description: identified
+    - text:
+        type: file
+        description: text file      
+    - reads:
+        type: file
+        description: Input Illunina paired-end FASTQ files
+        pattern: "*.{fq.gz,fastq.gz}"
+        ontologies: []
+output:
+  xml:
+    - - meta:
+          type: map
+          description: |
+            Groovy Map containing sample information
+            e.g. `[ id:'test', single_end:false ]`
+      - "out-*.txt":
+          type: file
+          description: Text output
+          pattern: "out-*.xml"
+  id:
+     type: string 
+     description: identifier
+authors:
+  - jorge
+maintainers:
+  - jorge
