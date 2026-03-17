@@ -8,6 +8,7 @@ workflow SUBWORKFLOW_TEST{
    main:
    	out_files = TEST(id, test, reads)
    emit:
+	   id = out_files.id
 	   out = out_files.txt
   
 }
